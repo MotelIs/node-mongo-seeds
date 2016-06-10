@@ -3,6 +3,25 @@
 [![Code Climate](https://codeclimate.com/github/toymachiner62/node-mongo-seeds/badges/gpa.svg)](https://codeclimate.com/github/toymachiner62/node-mongo-seeds)
 
 A tool to quickly populate your mongo db from a set of .json files. The concept is very similar to Ruby on Rails idea of seeding a database. This allows a new developer to pull down the source code for a project (which contains .json files to populate their mongodb with) and run a command and bingo!! database populated and ready to rock.
+## Specific to Motel fork
+
+Preface fields intended to be mongodb object Ids with 'oid_' in order to convert those fields with the provided hex string. For example, 
+
+    {
+   	 "oid__id": "57583e797b1ebe622e28fdff",
+   	 "lastName": "test",
+   	 "name": "test",
+   	 "email": "test@test.test"
+    }
+
+will be inserted into the database as
+
+    {
+      "_id": ObjectId("57583e797b1ebe622e28fdff"),
+      "lastName": "test",
+      "name": "test",
+      "email": "test@test.test"
+    }
 
 ## Usage
 
